@@ -1,10 +1,10 @@
 package Task4.Generics;
 
-public class Box<T> {
-    private Fruit fruit;
+public class Box<T extends Fruit> {
+    private T fruit;
     private Integer number;
 
-    public Box(Fruit fruit, Integer number) {
+    public Box(T fruit, Integer number) {
         this.fruit = fruit;
         this.number = number;
     }
@@ -13,7 +13,7 @@ public class Box<T> {
         return fruit;
     }
 
-    public void setFruit(Fruit fruit) {
+    public void setFruit(T fruit) {
         this.fruit = fruit;
     }
 
@@ -27,13 +27,5 @@ public class Box<T> {
 
     public Integer getTotalWeight() {
         return fruit.getWeight() * number;
-    }
-
-    public void addFruit(Integer quantity) {
-        this.number += quantity;
-    }
-
-    public void takeFruit(Integer quantity) {
-        this.number -= quantity;
     }
 }
