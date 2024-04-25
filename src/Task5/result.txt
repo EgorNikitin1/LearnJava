@@ -1,0 +1,20 @@
+Самый новый патент:
+Patent{patNumber='US2021062638', regYear=2021, inventors=[Farmer Sean, Alibek Ken, Nerris Anthony]}
+
+Патенты с двумя и более изобретателями:
+Patent{patNumber='US2021062638', regYear=2021, inventors=[Farmer Sean, Alibek Ken, Nerris Anthony]}
+Patent{patNumber='WO2020264071', regYear=2020, inventors=[Farmer Sean, Alibek Ken]}
+Patent{patNumber='WO2020252514', regYear=2020, inventors=[Liu Tong, Andrew kobylinski]}
+Patent{patNumber='CN111905847', regYear=2017, inventors=[Gao Jianru, Xiao He]}
+Patent{patNumber='US2015379139', regYear=2015, inventors=[Hashem Mohammed, Waid Margaret]}
+Patent{patNumber='CN111905722', regYear=2020, inventors=[Xiao He, Xue Shoufeng]}
+Patent{patNumber='US2020277409', regYear=2020, inventors=[Abraham Walter, Diminique Lelimousin]}
+Patent{patNumber='CN210903515', regYear=2016, inventors=[Wang Jian, Zhu Xianwen, Xiao He, Shi Zhanung]}
+Patent{patNumber='CN110756392', regYear=2019, inventors=[Wei Yufeng, Xiao He, Shang Qiuxiang]}
+
+
+Изобретатель с наибольшим количестом патентов:
+Xiao He
+
+Соавторы изобретателя:
+[Shi Zhanung, Wei Yufeng, Wang Jian, Shang Qiuxiang, Gao Jianru, Xue Shoufeng, Zhu Xianwen]
