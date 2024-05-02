@@ -1,0 +1,11 @@
+ID;Наименование;Бренд;Цвет;Цена за 1 шт., руб;Оценка покупателей
+1;Tefal RK816E32;Tefal;черный;6850;4.3
+2;Philips HD4734/03;Scarlett;белый;12599;4.4
+3;Bosch MUC48W68RU;Bosch;белый;22799;4.8
+4;Redmond RMC-03;Redmond;черный;4150;3.8
+5;Polaris PMC 0586AD;Polaris;черный;4399;4.7
+6;Polaris PMC 0490AD;Polaris;серебристый;4799;4.8
+7;Centek CT-1472;Centec;черный;5999;4.5
+8;Gemlux GL-PC-27;Scarlett;черный;3750;3.7
+9;Polaris PMC 0573AD;Polaris;серебристый;3999;4.7
+10;Scarlett SC-MC410S18;Scarlett;серебристый;3999;4.6
