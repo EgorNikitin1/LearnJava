@@ -1,22 +1,18 @@
 package Task5;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
 
+@AllArgsConstructor
 @Getter
 @Setter
 public class Patent {
     private String patNumber;
     private int regYear;
     private ArrayList<String> inventors;
-
-    public Patent(String patNumber, int regYear, ArrayList<String> inventors) {
-        this.patNumber = patNumber;
-        this.regYear = regYear;
-        this.inventors = inventors;
-    }
 
     @Override
     public String toString() {
