@@ -4,6 +4,7 @@ public interface Subject {
 
     void registerObserver(Observer o);
     void removeObserver(Observer o);
-    void notifyObservers();
+    void notifyObserversItem() throws Exception;
+    void notifyObserversIncome();
 
 }

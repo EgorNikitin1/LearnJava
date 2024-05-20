@@ -2,6 +2,7 @@ package Task7;
 
 public interface Observer {
 
-    void update(int income, String item);
+    void updateItem(String item) throws Exception;
+    void updateIncome(int newOrder);
 
 }

@@ -1,43 +1,27 @@
 package Task7;
 
-import java.util.ArrayList;
-
 /**
  * Класс "Бухгалтерия"
  */
-public class Accounting implements Subject {
+public class Accounting implements Observer {
 
     private static Accounting uniqueInstance;
     private int income = 0;
     private final String PASSWORD = "admin";
-    private String item;
-    ArrayList<Observer> obsList = new ArrayList<>();
+    Subject update;
 
-    public void registerObserver(Observer o) {obsList.add(o);}
-
-    public void removeObserver(Observer o) {
-        if (obsList.contains(o)) {obsList.remove(o);}
+    private Accounting(Subject update) {
+        this.update = update;
+        update.registerObserver(this);
     }
 
-    public void notifyObservers() {
-        for (Observer o:obsList) {o.update(income, item);}
-    }
-
-    private Accounting() {
-
-    }
-
-    public static Accounting getInstance() {
+    public static Accounting getInstance(Subject update) {
         if (uniqueInstance == null) {
-            uniqueInstance = new Accounting();
+            uniqueInstance = new Accounting(update);
         }
         return uniqueInstance;
     }
 
-    /**
-     * Метод распечатывает доход по паролю
-     * @param psw - пароль
-     */
     public void getIncome(String psw){
         if (psw.equals(PASSWORD)) {System.out.println("Доход: " + income);}
         else {
@@ -45,14 +29,12 @@ public class Accounting implements Subject {
         }
     }
 
-    /**
-     * Метод считает общий доход
-     * @param newOrder - сумма нового заказа
-     */
-    public void update(int newOrder, String item){
+    public void updateItem(String item) {
+
+    }
+
+    public void updateIncome(int newOrder) {
         income += newOrder;
-        this.item = item;
-        notifyObservers();
     }
 
 }

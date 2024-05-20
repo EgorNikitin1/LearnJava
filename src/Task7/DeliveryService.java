@@ -4,19 +4,22 @@ package Task7;
  * Класс "Доставка"
  */
 public class DeliveryService implements Observer {
-    Subject accounting;
 
-    public DeliveryService(Subject accounting) {
-        this.accounting = accounting;
-        accounting.registerObserver(this);
+    private int delivery = 0;
+    Subject update;
+
+    public DeliveryService(Subject update) {
+        this.update = update;
+        update.registerObserver(this);
     }
 
-    public void update(int income, String item) {
-        if (income < 20000) {
-            System.out.println("Стоимость доставки: 1000");
-        }
-        else {
-            System.out.println("Доставка бесплатная");
-        }
+    public void updateItem(String item) {
+
     }
+
+    public void updateIncome(int income) {
+        delivery += income * 0.05;
+        System.out.println("Стоимость доставки: " + delivery);
+    }
+
 }

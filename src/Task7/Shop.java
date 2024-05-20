@@ -13,9 +13,11 @@ public class Shop {
         System.out.println("Для просмотра количества товара на складе введите \"товары\"");
         System.out.println("Для завершения работы введите \"break\"");
 
-        Accounting acc = Accounting.getInstance();
-        Warehouse wh = new Warehouse(acc);
-        DeliveryService ds = new DeliveryService(acc);
+        Update update = new Update();
+
+        Accounting acc = Accounting.getInstance(update);
+        Warehouse wh = new Warehouse(update);
+        DeliveryService ds = new DeliveryService(update);
         String item;
 
         Map <String, Integer> price = new HashMap<>(); //ценник
@@ -33,12 +35,17 @@ public class Shop {
                 break;
             } else if (item.equals("товары")) {wh.printWarehouse();}
             else {
-                if (item.contains(" ")) {
-                    acc.getIncome(item.substring(item.indexOf(" ")+1));
+                if (item.contains("income ")) {
+                    acc.getIncome(item.substring(item.indexOf(" ") + 1));
                 } else {
                     if (price.containsKey(item)) {
-                        acc.update(price.get(item), item);
-                    }else {System.out.println("Товара \"" + item + "\" нет на складе.");}
+                        try {
+                            update.updateItem(item);
+                            update.updateIncome(price.get(item));
+                        } catch (Exception ignored) {
+                            System.out.println("Товар \"" + item + "\" закончился.");
+                        }
+                    } else {System.out.println("Товара \"" + item + "\" нет на складе.");}
                 }
             }
         }
