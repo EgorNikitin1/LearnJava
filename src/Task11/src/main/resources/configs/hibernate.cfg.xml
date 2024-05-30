@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- properties -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5434/postgres?currentSchema=guitarsdb</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">admin</property>
+        <property name="show_sql">true</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="current_session_context_class">thread</property>
+        <!-- mapping files -->
+        <mapping class="ru.muctr.Guitar"/>
+        <mapping class="ru.muctr.Group"/>
+        <mapping class="ru.muctr.GuitarInfo"/>
+        <mapping class="ru.muctr.Brand"/>
+    </session-factory>
+</hibernate-configuration>
